@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стрелочный Индикатор</title>
+    <link rel="stylesheet" href="range.css">
+</head>
+<body>
+    <div class="container">
+        <div class="indicator-container">
+            <input type="range" id="range-indicator" min="0" max="9" value="0" readonly>
+            <div class="ticks">
+                <div class="tick" data-value="0">0</div>
+                <div class="tick" data-value="1">1</div>
+                <div class="tick" data-value="2">2</div>
+                <div class="tick" data-value="3">3</div>
+                <div class="tick" data-value="4">4</div>
+                <div class="tick" data-value="5">5</div>
+                <div class="tick" data-value="6">6</div>
+                <div class="tick" data-value="7">7</div>
+                <div class="tick" data-value="8">8</div>
+                <div class="tick" data-value="9">9</div>
+            </div>
+        </div>
+        <div class="keyboard">
+            <button onclick="setIndicatorValue(0)">0</button>
+            <button onclick="setIndicatorValue(1)">1</button>
+            <button onclick="setIndicatorValue(2)">2</button>
+            <button onclick="setIndicatorValue(3)">3</button>
+            <button onclick="setIndicatorValue(4)">4</button>
+            <button onclick="setIndicatorValue(5)">5</button>
+            <button onclick="setIndicatorValue(6)">6</button>
+            <button onclick="setIndicatorValue(7)">7</button>
+            <button onclick="setIndicatorValue(8)">8</button>
+            <button onclick="setIndicatorValue(9)">9</button>
+        </div>
+    </div>
+
+    <script>
+        function setIndicatorValue(value) {
+            const rangeIndicator = document.getElementById('range-indicator');
+            rangeIndicator.value = value;
+
+            if (value > 5) {
+                document.body.style.backgroundColor = 'red';
+            } else {
+                document.body.style.backgroundColor = 'white';
+            }
+        }
+    </script>
+</body>
+</html>

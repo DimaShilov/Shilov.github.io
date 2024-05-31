@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме Шилов Дмитрий </title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <a href="index.html" target="_blank">Зайти в игру с ползунком</a>
+    <div class="container">
+        <div class="header">
+            <h1 id="name">Дмитрий</h1>
+            <h2 id="lastname">Шилов</h2>
+            <h3 id="prof">IT-Project Manager</h3>
+        </div>
+        <div class="profile">
+            <img src="Shilov.jpg" alt="Мое фото" class="profile-photo">
+        </div>
+        <div class="personalInfo">
+            <h4><strong>Личные данные</strong></h4>
+            <p><strong>Возраст:</strong> 21 год</p>
+            <p><strong>Город:</strong> Москва</p>
+            <p><strong>Email:</strong> mitya.shilov.36@gmail.com</p>
+            <p><strong>Телефон:</strong> +7-993-258-25-10</p>
+        </div>
+        <div class="AboutMe">
+            <h6><strong>Обо мне</strong></h6>
+            <p> - Работаю руководителем IT-проектов в студии веб-разработки</p>
+            <p> - Являюсь студентом 3-его курса в МГТУ "СТАНКИН". Обучаюсь на кафедре КСУ (Компьютерные системы управления) </p>
+        </div>
+        <div class="input-section">
+            <h5>Управление страницей</h5>
+            <label for="lastname-input">Изменить фамилию:</label>
+            <input type="text" id="lastname-input" placeholder="Введите новую фамилию">
+            <button onclick="changeLastName()">Изменить фамилию</button>
+        </div>
+        <div class="button-section">
+            <button onclick="changeBackgroundColor()">Изменить цвет фона</button>
+        </div>
+    </div>
+
+    <script>
+        function changeLastName() {
+            const lastNameInput = document.getElementById('lastname-input').value;
+            document.getElementById('lastname').innerText = lastNameInput;
+        }
+
+        function changeBackgroundColor() {
+            const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
